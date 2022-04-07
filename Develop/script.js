@@ -1,64 +1,61 @@
 var today = moment();
 var saveBtn = $('.saveBtn')
 var textArea = document.querySelectorAll('textarea').value;
-var texty = document.getElementById('texty');
+var texty9 = document.getElementById('texty9');
+var texty10 = document.getElementById('texty10');
+var texty11 = document.getElementById('texty11');
+var texty12 = document.getElementById('texty12');
+var texty13 = document.getElementById('texty13');
+var texty14 = document.getElementById('texty14');
+var texty15 = document.getElementById('texty15');
 
 //Header Timestamp
 $("#currentDay").text(today.format("dddd, MMMM Do"));
 
   //Compares Time to Each Row
-$(function() {
-    function makeHour(dt) {
-      return dt.getHours() + (dt.getMinutes() / 60);
-    }
-    function textToDate(str) {
-      var h = parseInt(str.slice(0, str.indexOf(":")));
-      var m = parseInt(str.slice(str.indexOf(":") + 1, -2));
-      var mer = str.slice(-2);
-      if (mer == "PM") {
-        h = h + 12;
-      }
-      var dt = new Date();
-      dt.setHours(h, m);
-      return dt;
-    }
-    function compHours(a, b) {
-      var r = 0;
-      if (a < b) {
-        r = -1;
-      }
-      if (a > b) {
-        r = 1;
-      }
-      return r;
-    }
-    function checkTime() {
-      var then = textToDate($(".hour").text().trim());
-      var now = new Date();
-      var thenH = makeHour(then);
-      var nowH = makeHour(now);
-      console.log(then, now);
-      var test = compHours(thenH, nowH);
-      console.log(thenH, nowH, test);
-      if (test == 0) {
-        $(".hour").addClass("present");
-      } else if (test == -1) {
-        $(".hour").addClass("past");
+  function timeFunction() {
+    var hour = moment().format('k');
+    console.log(hour);
+    $("tr").each(function() {
+        //Converts ID to interger for comparison
+      var timeBlockID = parseInt($(this).attr("id"));
+      if (timeBlockID < hour) {
+        // Updates class to past if the ID is less than the current value
+        $(this).addClass("past");
+        // Updates class to present if id is equal to time value
+      } else if (timeBlockID == hour) {
+        $(this).removeClass("past").addClass("present");
+        // Updates class to future otherwise
       } else {
-        $(".hour").addClass("future");
+        $(this).removeClass("past present").addClass("future");
       }
-    }
-    checkTime();
-  });
-
-//Stores Input to local data on save button click
-saveBtn.on("click", function(event) {
-    event.preventDefault();
-    localStorage.setItem("todo", texty.value);
+    });
+  }
+//saves all input on button click
+  $(".saveBtn").on("click", function() {
+    localStorage.setItem("todo9", texty9.value);localStorage.setItem("todo10", texty10.value);
+    localStorage.setItem("todo11", texty11.value);localStorage.setItem("todo12", texty12.value);
+    localStorage.setItem("todo13", texty13.value);localStorage.setItem("todo14", texty14.value);
+    localStorage.setItem("todo15", texty15.value);
 });
-//Retrieves local storage
+// Loads in stored data from localstorage
 function renderLastRegistered() {
-    var textArea = localStorage.getItem("todo");
-    texty.textContent = textArea;
+    var textArea9 = localStorage.getItem("todo9");
+    var textArea10 = localStorage.getItem("todo10");
+    var textArea11 = localStorage.getItem("todo11");
+    var textArea12 = localStorage.getItem("todo12");
+    var textArea13 = localStorage.getItem("todo13");
+    var textArea14 = localStorage.getItem("todo14");
+    var textArea15 = localStorage.getItem("todo15");
+    texty9.textContent = textArea9;
+    texty10.textContent = textArea10;
+    texty11.textContent = textArea11;
+    texty12.textContent = textArea12;
+    texty13.textContent = textArea13;
+    texty14.textContent = textArea14;
+    texty15.textContent = textArea15;
 }
-renderLastRegistered()
+
+// Starts on page load
+timeFunction();
+renderLastRegistered();
