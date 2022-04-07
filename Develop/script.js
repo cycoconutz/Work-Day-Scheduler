@@ -1,11 +1,16 @@
 var today = moment();
+var saveBtn = $('.saveBtn')
+var textArea = document.querySelectorAll('textarea').value;
+var texty = document.getElementById('texty');
+
+//Header Timestamp
 $("#currentDay").text(today.format("dddd, MMMM Do"));
 
+  //Compares Time to Each Row
 $(function() {
     function makeHour(dt) {
       return dt.getHours() + (dt.getMinutes() / 60);
     }
-  
     function textToDate(str) {
       var h = parseInt(str.slice(0, str.indexOf(":")));
       var m = parseInt(str.slice(str.indexOf(":") + 1, -2));
@@ -17,7 +22,6 @@ $(function() {
       dt.setHours(h, m);
       return dt;
     }
-  
     function compHours(a, b) {
       var r = 0;
       if (a < b) {
@@ -28,7 +32,6 @@ $(function() {
       }
       return r;
     }
-  
     function checkTime() {
       var then = textToDate($(".hour").text().trim());
       var now = new Date();
@@ -45,6 +48,17 @@ $(function() {
         $(".hour").addClass("future");
       }
     }
-  
     checkTime();
   });
+
+//Stores Input to local data on save button click
+saveBtn.on("click", function(event) {
+    event.preventDefault();
+    localStorage.setItem("todo", texty.value);
+});
+//Retrieves local storage
+function renderLastRegistered() {
+    var textArea = localStorage.getItem("todo");
+    texty.textContent = textArea;
+}
+renderLastRegistered()
