@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container">
+      <!-- Timeblocks go here -->
+      <table>
+        <thead>
+          <tr id="9">
+            <th scope="row"  class="time-block">9am</th>
+            <th class="col-12 col-xl-12 hour"><div class="input-group">
+            <textarea id='texty9' class="form-control hour textarea" aria-label="With textarea"></textarea>
+            </div></th>
+            <th class=""><button type="button" class="btn btn-info saveBtn">💾
+            </button>
+            </th>
+          </tr>
+          <tr id="10">
+            <th scope="row" class="time-block">10am</th>
+            <th class="col-12 col-xl-12 hour "><div class="input-group">
+            <textarea id='texty10'class="form-control hour textarea" aria-label="With textarea"></textarea>
+            </div></th>
+            <th class=""><button type="button" class="btn btn-info saveBtn">💾
+            </button>
+            </th>
+          </tr>
+          <tr id="11">
+            <th scope="row" class="time-block">11am</th>
+            <th class="col-12 col-xl-12 hour "><div class="input-group">
+            <textarea id='texty11'class="form-control hour textarea" aria-label="With textarea"></textarea>
+            </div></th>
+            <th class=""><button type="button" class="btn btn-info saveBtn">💾
+            </button>
+            </th>
+          </tr>
+          <tr id="12">
+            <th scope="row" class="time-block">12pm</th>
+            <th class="col-12 col-xl-12 hour "><div class="input-group">
+            <textarea id='texty12'class="form-control hour textarea" aria-label="With textarea"></textarea>
+            </div></th>
+            <th class=""><button type="button" class="btn btn-info saveBtn">💾
+            </button>
+            </th>
+          </tr>
+          <tr id="13">
+            <th scope="row" class="time-block">1pm</th>
+            <th class="col-12 col-xl-12 hour "><div class="input-group">
+            <textarea id='texty13'class="form-control hour textarea" aria-label="With textarea"></textarea>
+            </div></th>
+            <th class=""><button type="button" class="btn btn-info saveBtn">💾
+            </button>
+            </th>
+          </tr>
+          <tr id="14">
+            <th scope="row" class="time-block">2pm</th>
+            <th class="col-12 col-xl-12 hour "><div class="input-group">
+            <textarea id='texty14'class="form-control hour textarea" aria-label="With textarea"></textarea>
+            </div></th>
+            <th class=""><button type="button" class="btn btn-info saveBtn">💾
+            </button>
+            </th>
+          </tr>
+          <tr id="15">
+            <th scope="row" class="time-block">3pm</th>
+            <th class="col-12 col-xl-12 hour "><div class="input-group">
+            <textarea id='texty15'class="form-control hour textarea" aria-label="With textarea"></textarea>
+            </div></th>
+            <th class=""><button type="button" class="btn btn-info saveBtn">💾
+            </button>
+            </th>
+          </tr>
+          <tr id="16">
+            <th scope="row" class="time-block">4pm</th>
+            <th class="col-12 col-xl-12 hour "><div class="input-group">
+            <textarea id='texty16'class="form-control hour textarea" aria-label="With textarea"></textarea>
+            </div></th>
+            <th class=""><button type="button" class="btn btn-info saveBtn">💾
+            </button>
+            </th>
+          </tr>
+          <tr id="17">
+            <th scope="row" class="time-block">5pm</th>
+            <th class="col-12 col-xl-12 hour "><div class="input-group">
+            <textarea id='texty17'class="form-control hour textarea" aria-label="With textarea"></textarea>
+            </div></th>
+            <th class="button"><button type="button" class="btn btn-info saveBtn">💾
+            </button>
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous" ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
